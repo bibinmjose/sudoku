@@ -69,7 +69,6 @@ def naked_twins(values):
                     for digit in values[boxA]:
                         out[peer].replace(digit, '')
     return out
-99
 
 
 def eliminate(values):
