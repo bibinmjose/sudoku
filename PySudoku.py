@@ -12,7 +12,8 @@ def play(values, result, history):
     size = width, height = 700, 700
     screen = pygame.display.set_mode(size)
 
-    background_image = pygame.image.load("./images/sudoku-board-bare.jpg").convert()
+    background_image = pygame.image.load(
+        "./images/sudoku-board-bare.jpg").convert()
 
     clock = pygame.time.Clock()
 
@@ -24,19 +25,22 @@ def play(values, result, history):
         startX, startY, editable, number = 0, 0, "N", 0
         for y in range(9):
             for x in range(9):
-                if x in (0, 1, 2):  startX = (x * 57) + 38
-                if x in (3, 4, 5):  startX = (x * 57) + 99
-                if x in (6, 7, 8):  startX = (x * 57) + 159
+                if x in (0, 1, 2): startX = (x * 57) + 38
+                if x in (3, 4, 5): startX = (x * 57) + 99
+                if x in (6, 7, 8): startX = (x * 57) + 159
 
-                if y in (0, 1, 2):  startY = (y * 57) + 35
-                if y in (3, 4, 5):  startY = (y * 57) + 100
-                if y in (6, 7, 8):  startY = (y * 57) + 165
+                if y in (0, 1, 2): startY = (y * 57) + 35
+                if y in (3, 4, 5): startY = (y * 57) + 100
+                if y in (6, 7, 8): startY = (y * 57) + 165
                 string_number = values[rows[y] + cols[x]]
-                if len(string_number) > 1 or string_number == '' or string_number == '.':
+                if len(string_number
+                       ) > 1 or string_number == '' or string_number == '.':
                     number = None
                 else:
                     number = int(string_number)
-                theSquares.append(SudokuSquare.SudokuSquare(number, startX, startY, editable, x, y))
+                theSquares.append(
+                    SudokuSquare.SudokuSquare(number, startX, startY, editable,
+                                              x, y))
 
         screen.blit(background_image, (0, 0))
         for num in theSquares:
