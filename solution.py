@@ -10,6 +10,7 @@ diagonal_units = [[r+s for r, s in zip(rows, cols)],
                   [r+s for r, s in zip(rows, reversed(cols))]]
 unitlist = row_units + column_units + square_units + diagonal_units
 
+
 # Must be called after all units (including diagonals) are added to the unitlist
 units = extract_units(unitlist, boxes)
 peers = extract_peers(units, boxes)
@@ -52,7 +53,6 @@ def naked_twins(values):
     Pseudocode for this algorithm on github:
     https://github.com/udacity/artificial-intelligence/blob/master/Projects/1_Sudoku/pseudocode.md
     """
-    # TODO: Implement this function!
 
     out = values.copy()
 
@@ -69,6 +69,7 @@ def naked_twins(values):
                     for digit in values[boxA]:
                         out[peer].replace(digit, '')
     return out
+99
 
 
 def eliminate(values):
@@ -200,7 +201,6 @@ def solve(grid):
     ----------
     grid(string)
         a string representing a sudoku grid.
-
         Ex. '2.............62....1....7...6..8...3...9...7...6..4...4....8....52.............3'
 
     Returns
