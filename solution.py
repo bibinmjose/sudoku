@@ -104,10 +104,6 @@ def only_choice(values):
     -------
     dict
         The values dictionary with all single-valued boxes assigned
-
-    Notes
-    -----
-    You should be able to complete this function by copying your code from the classroom
     """
     for unit in unitlist:
         for digit in '123456789':
@@ -165,11 +161,6 @@ def search(values):
     -------
     dict or False
         The values dictionary with all boxes assigned or False
-
-    Notes
-    -----
-    You should be able to complete this function by copying your code from the classroom
-    and extending it to call the naked twins strategy.
     """
     values = reduce_puzzle(values)
     if values is False:
